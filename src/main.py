@@ -5,21 +5,14 @@ As receving 'r' from com port, xmc100 will return string in the format of bx;by;
 Thus, the last step will split the string for further using.
 '''
 
+import hall
 import serial
-ser = serial.Serial(
-        port = 'COM3', #Type in the com port
-        baudrate = 9600
-    )
 
 def main():
-    while True:
-        
-        ser.write('u'.encode())
-        ser.write('r'.encode())
-        data = ser.readline()
-        data = data.decode().splitlines()[0]
-        parse_data = data.split(";")
-        print(parse_data)
+    hall_port = 'COM3'
+    hall_ser = hall.connect_hall(hall_port)
+    print(hall.read_hall(hall_ser))
+    hall_ser.close()
 
 if __name__ == "__main__":
     main()
