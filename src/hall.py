@@ -8,11 +8,14 @@ Thus, the last step will split the string for further using.
 import serial
 
 def connect_hall(port_name):
-    return serial.Serial(port = port_name, baudrate = 9600)
+    return serial.Serial(port = port_name, baudrate = 115200)
 
 def read_hall(hall_ser):
+
+    hall_ser.flushInput()
+    hall_ser.flushOutput()
     hall_ser.write('u'.encode())
-    hall_ser.write('r'.encode())
+    #hall_ser.write('r'.encode())
     data = hall_ser.readline()
     data = data.decode().splitlines()[0]
     parse_data = data.split(";")
