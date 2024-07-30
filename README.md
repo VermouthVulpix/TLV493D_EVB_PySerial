@@ -21,5 +21,5 @@ pip install pyserial
    When the EVB is connected via USB, main program can read bx,by,bz after setting up the correct "COM"
 
  - source:\
-   https://github.com/Infineon/arduino-xensiv-3d-magnetic-sensor-tlx493d/tree/master  (latest library)
+   https://github.com/Infineon/arduino-xensiv-3d-magnetic-sensor-tlx493d/tree/master  (latest library)\
    https://github.com/Infineon/TLE493D-3DMagnetic-Sensor
